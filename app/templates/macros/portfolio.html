@@ -2,6 +2,11 @@
 <!-- Portfolio Section -->
 <section class="page-section pt-50 pb-20">
   <div class="container relative">
+    {%if type=='edit' %}
+    <div class="row">
+      <a href="#" class="pull-right btn btn-mod btn-circle btn-large">新增卡片</a>
+    </div>
+    {% endif %}
     <h2 class="section-title font-alt mb-70 mb-sm-40">
       {%if title %} {{title}} {% endif %}
     </h2>
@@ -17,6 +22,7 @@
 
     <!-- Works Grid -->
     <ul class="works-grid work-grid-3 work-grid-gut clearfix font-alt hover-white hide-titles" id="work-grid">
+      <!-- End Work Item -->
 
       <!-- Work Item (Lightbox) -->
       <li class="work-item mix photography">
@@ -208,21 +214,7 @@
           </div>
         </a>
       </li>
-      <!-- End Work Item -->
-      {%if type=='edit' %}
-      <!-- Work Item (Lightbox) -->
-      <li class="work-item mix photography design branding">
-        <a href="images/portfolio/full-project-3.jpg" class="work-lightbox-link mfp-image">
-          <div class="work-img">
-            <img src="images/portfolio/add-new-project.jpg" alt="Work" />
-          </div>
 
-        </a>
-      </li>
-      <!-- End Work Item -->
-
-
-      {% endif %}
     </ul>
     <!-- End Works Grid -->
 
