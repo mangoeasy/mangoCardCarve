@@ -5,10 +5,15 @@
 {% include "partials/hero-video.html" %}
 
 {% import 'macros/portfolio.html' as portfolio %}
-{{portfolio.mode('list','INVITATION CARD 请柬')}}
+{{portfolio.mode('list')}}
 
-{% import 'macros/portfolio.html' as portfolio %}
-{{portfolio.mode('list','INVITATION CARD 2')}}
 
 {% include "partials/footer.html" %}
 {% endblock %}
+
+{% block jsContent %}
+<!-- build:js scripts/home.js -->
+<script src="scripts/home.js"></script>
+<!-- endbuild -->
+{% endblock %}
+
