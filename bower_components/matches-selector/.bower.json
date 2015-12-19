@@ -1,0 +1,14 @@
+{
+  "name": "matches-selector",
+  "homepage": "https://github.com/desandro/matches-selector",
+  "version": "1.0.3",
+  "_release": "1.0.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.3",
+    "commit": "95e78d3f36e19066e89b0ed767ca36bd2f0b0cfb"
+  },
+  "_source": "git://github.com/desandro/matches-selector.git",
+  "_target": "~1.0.2",
+  "_originalSource": "matches-selector"
+}

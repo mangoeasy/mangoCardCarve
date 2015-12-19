@@ -1,0 +1,18 @@
+@charset "utf-8";
+$icon-font-path: '../fonts/';
+
+// bower:scss
+//@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+.fullscreen-bg {
+  position: absolute;
+  z-index: 0;
+  min-width: 100%;
+  min-height: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 2000ms;
+}
