@@ -37,7 +37,7 @@
 
   <!-- Page Wrap -->
   <div class="page" id="top">
-    
+
 
 
 <!-- Navigation panel -->
@@ -116,15 +116,15 @@
 
 
 <!-- Portfolio Section -->
-<section class="page-section pt-50 pb-20">
+<section class="page-section pt-50 pb-20" data-bind="foreach:viewModel.cardTypes">
   <div class="container relative">
-    
-    <h2 class="section-title font-alt mb-70 mb-sm-40">
+
+    <h2 class="section-title font-alt mb-70 mb-sm-40" data-bind="text:Name">
 
     </h2>
 
     <!-- Works Filter -->
-    <div class="works-filter font-alt   align-center ">
+    <div class="works-filter font-alt   align-center " >
       <a href="#" class="filter active" data-filter="*">All works</a>
       <a href="#" class="filter" data-filter=".branding">Branding</a>
       <a href="#" class="filter" data-filter=".design">Design</a>
@@ -492,7 +492,7 @@
   <script src="scripts/plugins.js"></script>
 
   <script src="scripts/previousJS.js"></script>
-  
+
 <script src="scripts/home.js"></script>
 
   <script src="scripts/main.js"></script>
