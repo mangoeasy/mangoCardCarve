@@ -14,7 +14,6 @@ var Home = {
     }
   }
 };
-$(function () {
   console.log('home')
   ko.applyBindings(Home);
 
@@ -29,4 +28,3 @@ $(function () {
       });
     });
   });
-});
