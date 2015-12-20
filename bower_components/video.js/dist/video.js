@@ -2526,7 +2526,7 @@ function forEach(list, iterator, context) {
     if (arguments.length < 3) {
         context = this
     }
-    
+
     if (toString.call(list) === '[object Array]')
         forEachArray(list, iterator, context)
     else if (typeof list === 'string')
@@ -18477,7 +18477,7 @@ var _guid = 1;
 /**
  * Get the next unique ID
  *
- * @return {String} 
+ * @return {String}
  * @function newGUID
  */
 
@@ -18565,7 +18565,7 @@ function _logType(type, args) {
 
   // call appropriate log function
   if (console[type].apply) {
-    console[type].apply(console, argsArray);
+    //console[type].apply(console, argsArray);
   } else {
     // ie8 doesn't allow error.apply, but it will just join() the array anyway
     console[type](argsArray.join(' '));
