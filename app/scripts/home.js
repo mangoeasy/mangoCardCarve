@@ -15,7 +15,9 @@ var Home = {
   }
 };
 $(function () {
+  console.log('home')
   ko.applyBindings(Home);
+
   $.get("http://MangoCardsApi.local/api/CardType/", function (data) {
     ko.mapping.fromJS(data, {}, Home.viewModel.cardTypes);
     $.get("http://MangoCardsApi.local/api/Employee/", function (employees) {
