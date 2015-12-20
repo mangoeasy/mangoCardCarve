@@ -13041,7 +13041,7 @@ function _createSetter(attr) {
 }
 function _createGetter(attr) {
   _api[attr] = function () {
-    return this.el_.vjs_getProperty(attr);
+    //return this.el_.vjs_getProperty(attr);
   };
 }
 
