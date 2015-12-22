@@ -19,11 +19,14 @@ var Home = {
 
   $.get("http://api.card.mangoeasy.com/api/CardType/", function (data) {
     ko.mapping.fromJS(data, {}, Home.viewModel.cardTypes);
+
+    
     $.get("http://api.card.mangoeasy.com/api/Employee/", function (employees) {
       ko.mapping.fromJS(employees, {}, Home.viewModel.employees);
       $.get("http://api.card.mangoeasy.com/api/WeChatUser/", function (wechatuser) {
         if (wechatuser != null) {
           ko.mapping.fromJS(wechatuser, {}, Home.viewModel.wechatuser);
+
         }
       });
     });

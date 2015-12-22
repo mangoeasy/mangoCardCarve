@@ -688,7 +688,7 @@ function initWorkFilter() {
       });
     });
 
-    $(".filter").click(function() {
+    $(".page").delegate('.filter','click',function() {
       $(".filter").removeClass("active");
       $(this).addClass("active");
       fselector = $(this).attr('data-filter');
