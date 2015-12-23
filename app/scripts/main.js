@@ -1,10 +1,10 @@
-(function($) {
-console.log('main')
+(function ($) {
+  console.log('main')
   /* ---------------------------------------------
    Scripts initialization
    --------------------------------------------- */
 
-  $(window).load(function() {
+  $(window).load(function () {
 
     // Page loader
     $(".page-loader div").delay(0).fadeOut();
@@ -26,14 +26,8 @@ console.log('main')
   });
 
 
-
-  $(document).ready(function() {
-
-
-
-
+  $(document).ready(function () {
     $(window).trigger("resize");
-
     init_classic_menu();
     init_lightbox();
     init_parallax();
@@ -42,13 +36,13 @@ console.log('main')
     init_counters();
     init_team();
     initPageSliders();
-    //initWorkFilter();
+    initWorkFilter();
     init_map();
     init_wow();
     init_masonry();
   });
 
-  $(window).resize(function() {
+  $(window).resize(function () {
 
     init_classic_menu_resize();
     js_height_init();
@@ -94,7 +88,7 @@ console.log('main')
   // Sections backgrounds
 
   var pageSection = $(".home-section, .page-section, .small-section, .split-section");
-  pageSection.each(function(indx) {
+  pageSection.each(function (indx) {
 
     if ($(this).attr("data-background")) {
       $(this).css("background-image", "url(" + $(this).data("background") + ")");
@@ -110,15 +104,15 @@ console.log('main')
   }
 
   // Function equal height
-  ! function(a) {
-    a.fn.equalHeights = function() {
+  !function (a) {
+    a.fn.equalHeights = function () {
       var b = 0,
         c = a(this);
-      return c.each(function() {
+      return c.each(function () {
         var c = a(this).innerHeight();
         c > b && (b = c)
       }), c.css("height", b)
-    }, a("[data-equal]").each(function() {
+    }, a("[data-equal]").each(function () {
       var b = a(this),
         c = b.data("equal");
       b.find(c).equalHeights()
@@ -128,18 +122,17 @@ console.log('main')
 
   // Progress bars
   var progressBar = $(".progress-bar");
-  progressBar.each(function(indx) {
+  progressBar.each(function (indx) {
     $(this).css("width", $(this).attr("aria-valuenow") + "%");
   });
 
   var pageSection = $(".home-section, .page-section, .small-section, .split-section");
-  pageSection.each(function(indx) {
+  pageSection.each(function (indx) {
 
     if ($(this).attr("data-background")) {
       $(this).css("background-image", "url(" + $(this).data("background") + ")");
     }
   });
-
 
 
   /* ---------------------------------------------
@@ -157,8 +150,7 @@ console.log('main')
     // Mobile menu style toggle
     if ($(window).width() <= 1024) {
       $(".main-nav").addClass("mobile-on");
-    } else
-    if ($(window).width() > 1024) {
+    } else if ($(window).width() > 1024) {
       $(".main-nav").removeClass("mobile-on");
       desktop_nav.show();
     }
@@ -187,7 +179,7 @@ console.log('main')
       $(".main-nav").addClass("js-transparent");
     }
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
 
       if ($(window).scrollTop() > 10) {
         $(".js-transparent").removeClass("transparent");
@@ -202,7 +194,7 @@ console.log('main')
 
     // Mobile menu toggle
 
-    mobile_nav.click(function() {
+    mobile_nav.click(function () {
 
       if (desktop_nav.hasClass("js-opened")) {
         desktop_nav.slideUp("slow", "easeOutExpo").removeClass("js-opened");
@@ -214,7 +206,7 @@ console.log('main')
 
     });
 
-    desktop_nav.find("a:not(.mn-has-sub)").click(function() {
+    desktop_nav.find("a:not(.mn-has-sub)").click(function () {
       if (mobile_nav.hasClass("active")) {
         desktop_nav.slideUp("slow", "easeOutExpo").removeClass("js-opened");
         mobile_nav.removeClass("active");
@@ -230,12 +222,12 @@ console.log('main')
 
     $(".mobile-on .mn-has-sub").find(".fa:first").removeClass("fa-angle-right").addClass("fa-angle-down");
 
-    mnHasSub.click(function() {
+    mnHasSub.click(function () {
 
       if ($(".main-nav").hasClass("mobile-on")) {
         mnThisLi = $(this).parent("li:first");
         if (mnThisLi.hasClass("js-opened")) {
-          mnThisLi.find(".mn-sub:first").slideUp(function() {
+          mnThisLi.find(".mn-sub:first").slideUp(function () {
             mnThisLi.removeClass("js-opened");
             mnThisLi.find(".mn-has-sub").find(".fa:first").removeClass("fa-angle-up").addClass("fa-angle-down");
           });
@@ -253,14 +245,14 @@ console.log('main')
     });
 
     mnThisLi = mnHasSub.parent("li");
-    mnThisLi.hover(function() {
+    mnThisLi.hover(function () {
 
       if (!($(".main-nav").hasClass("mobile-on"))) {
 
         $(this).find(".mn-sub:first").stop(true, true).fadeIn("fast");
       }
 
-    }, function() {
+    }, function () {
 
       if (!($(".main-nav").hasClass("mobile-on"))) {
 
@@ -270,7 +262,6 @@ console.log('main')
     });
 
   }
-
 
 
   /* ---------------------------------------------
@@ -289,9 +280,9 @@ console.log('main')
     var sections = $(".home-section, .split-section, .page-section");
     var menu_links = $(".scroll-nav li a");
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
 
-      sections.filter(":in-viewport:first").each(function() {
+      sections.filter(":in-viewport:first").each(function () {
         var active_section = $(this);
         var active_link = $('.scroll-nav li a[href="#' + active_section.attr("id") + '"]');
         menu_links.removeClass("active");
@@ -301,7 +292,6 @@ console.log('main')
     });
 
   }
-
 
 
   /* ---------------------------------------------
@@ -341,7 +331,6 @@ console.log('main')
   }
 
 
-
   /* -------------------------------------------
    Parallax
    --------------------------------------------- */
@@ -366,7 +355,6 @@ console.log('main')
   }
 
 
-
   /* ---------------------------------------------
    Shortcodes
    --------------------------------------------- */
@@ -374,13 +362,13 @@ console.log('main')
   function init_shortcodes() {
 
     var tpl_tab_height;
-    $(".tpl-minimal-tabs > li > a").click(function() {
+    $(".tpl-minimal-tabs > li > a").click(function () {
 
       if (!($(this).parent("li").hasClass("active"))) {
         tpl_tab_height = $(".tpl-minimal-tabs-cont > .tab-pane").filter($(this).attr("href")).height();
         $(".tpl-minimal-tabs-cont").animate({
           height: tpl_tab_height
-        }, function() {
+        }, function () {
           $(".tpl-minimal-tabs-cont").css("height", "auto");
         });
 
@@ -393,7 +381,7 @@ console.log('main')
     allPanels.first().slideDown("easeOutExpo");
     $(".accordion > dt > a").first().addClass("active");
 
-    $(".accordion > dt > a").click(function() {
+    $(".accordion > dt > a").click(function () {
 
       var current = $(this).parent().next("dd");
       $(".accordion > dt > a").removeClass("active");
@@ -408,7 +396,7 @@ console.log('main')
     // Toggle
     var allToggles = $(".toggle > dd").hide();
 
-    $(".toggle > dt > a").click(function() {
+    $(".toggle > dt > a").click(function () {
 
       if ($(this).hasClass("active")) {
 
@@ -432,7 +420,6 @@ console.log('main')
   }
 
 
-
   /* ---------------------------------------------
    Tooltips (bootstrap plugin activated)
    --------------------------------------------- */
@@ -450,13 +437,12 @@ console.log('main')
   }
 
 
-
   /* ---------------------------------------------
    Some facts section
    --------------------------------------------- */
 
   function init_counters() {
-    $(".count-number").appear(function() {
+    $(".count-number").appear(function () {
       var count = $(this);
       count.countTo({
         from: 0,
@@ -469,8 +455,6 @@ console.log('main')
   }
 
 
-
-
   /* ---------------------------------------------
    Team
    --------------------------------------------- */
@@ -478,7 +462,7 @@ console.log('main')
   function init_team() {
 
     // Hover
-    $(".team-item").click(function() {
+    $(".team-item").click(function () {
       if ($("html").hasClass("mobile")) {
         $(this).toggleClass("js-active");
       }
@@ -497,9 +481,9 @@ console.log('main')
 })(jQuery); // End of use strict
 
 // Rotator Init
-(function($) {
+(function ($) {
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     $(".text-rotate").textrotator({
       animation: "dissolve", // You can pick the way it animates when rotating through words. Options are dissolve (default), fade, flip, flipUp, flipCube, flipCubeUp and spin.
       separator: ",", // If you don't want commas to be the separator, you can define a new separator (|, &, * etc.) by yourself using this field.
@@ -517,7 +501,7 @@ function initHeroBgVideo() {
 
   if ($(".fullscreen-bg").length) {
     var BVS = [];
-    $(".fullscreen-bg").each(function(i) {
+    $(".fullscreen-bg").each(function (i) {
       var obj = $.parseJSON($(this).attr('data-property'));
       var BV = new $.BigVideo({
         // If you want to use a single mp4 source, set as true
@@ -548,10 +532,10 @@ function initHeroBgVideo() {
   }
 }
 /* ---------------------------------------------
-     Sliders
-   --------------------------------------------- */
+ Sliders
+ --------------------------------------------- */
 function initPageSliders() {
-  (function($) {
+  (function ($) {
 
 
     // Fullwidth slider
@@ -659,9 +643,6 @@ function initPageSliders() {
 };
 
 
-
-
-
 /* ---------------------------------------------
  Portfolio section
  --------------------------------------------- */
@@ -671,61 +652,56 @@ function initPageSliders() {
 
 function initWorkFilter() {
 
-    $('.section-portfolio').each(function(i){
-      var fselector = 0;
-      var work_grid = $(this).find(".works-grid");
-      var work_filter = $(this).find(".filter");
+  $('.section-portfolio').each(function (i) {
+    var fselector = 0;
+    var work_grid = $(this).find(".works-grid");
+    var work_filter = $(this).find(".filter");
 
-      var isotope_mode;
-      if (work_grid.hasClass("masonry")) {
-        isotope_mode = "masonry";
-      } else {
-        isotope_mode = "fitRows"
-      }
+    var isotope_mode;
+    if (work_grid.hasClass("masonry")) {
+      isotope_mode = "masonry";
+    } else {
+      isotope_mode = "fitRows"
+    }
 
-      work_grid.imagesLoaded(function() {
-        work_grid.isotope({
-          itemSelector: '.mix',
-          layoutMode: isotope_mode,
-          filter: fselector
-        });
+    work_grid.imagesLoaded(function () {
+      work_grid.isotope({
+        itemSelector: '.mix',
+        layoutMode: isotope_mode,
+        filter: fselector
       });
+    });
 
-      work_filter.on('click',function() {
-        work_filter.removeClass("active");
-        $(this).addClass("active");
-        fselector = $(this).attr('data-filter');
+    work_filter.on('click', function () {
+      work_filter.removeClass("active");
+      $(this).addClass("active");
+      fselector = $(this).attr('data-filter');
 
-        work_grid.isotope({
-          itemSelector: '.mix',
-          layoutMode: isotope_mode,
-          filter: fselector
-        });
-        return false;
+      work_grid.isotope({
+        itemSelector: '.mix',
+        layoutMode: isotope_mode,
+        filter: fselector
       });
-    })
+      return false;
+    });
+  })
 
 
 }
-
-
-
 
 
 /* ---------------------------------------------
  Height 100%
  --------------------------------------------- */
 function js_height_init() {
-  (function($) {
+  (function ($) {
     $(".js-height-full").height($(window).height());
-    $(".js-height-parent").each(function() {
+    $(".js-height-parent").each(function () {
       console.log($(this).parent().first().height());
       $(this).height($(this).parent().first().height());
     });
   })(jQuery);
 }
-
-
 
 
 /* ---------------------------------------------
@@ -735,46 +711,46 @@ function js_height_init() {
 var gmMapDiv = $("#map-canvas");
 
 function init_map() {
-  (function($) {
+  (function ($) {
 
-    $(".map-section").click(function() {
+    $(".map-section").click(function () {
       $(this).toggleClass("js-active");
       $(this).find(".mt-open").toggle();
       $(this).find(".mt-close").toggle();
     });
 
     /*
-            if (gmMapDiv.length) {
+     if (gmMapDiv.length) {
 
-                var gmCenterAddress = gmMapDiv.attr("data-address");
-                var gmMarkerAddress = gmMapDiv.attr("data-address");
+     var gmCenterAddress = gmMapDiv.attr("data-address");
+     var gmMarkerAddress = gmMapDiv.attr("data-address");
 
 
-                gmMapDiv.gmap3({
-                    action: "init",
-                    marker: {
-                        address: gmMarkerAddress,
-                        options: {
-                            icon: "images/map-marker.png"
-                        }
-                    },
-                    map: {
-                        options: {
-                            zoom: 14,
-                            zoomControl: true,
-                            zoomControlOptions: {
-                                style: google.maps.ZoomControlStyle.SMALL
-                            },
-                            mapTypeControl: false,
-                            scaleControl: false,
-                            scrollwheel: false,
-                            streetViewControl: false,
-                            draggable: true,
-                            styles: [{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#efefef"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#dadada"}]}]
-                        }
-                    }
-                });
-            }*/
+     gmMapDiv.gmap3({
+     action: "init",
+     marker: {
+     address: gmMarkerAddress,
+     options: {
+     icon: "images/map-marker.png"
+     }
+     },
+     map: {
+     options: {
+     zoom: 14,
+     zoomControl: true,
+     zoomControlOptions: {
+     style: google.maps.ZoomControlStyle.SMALL
+     },
+     mapTypeControl: false,
+     scaleControl: false,
+     scrollwheel: false,
+     streetViewControl: false,
+     draggable: true,
+     styles: [{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#efefef"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#dadada"}]}]
+     }
+     }
+     });
+     }*/
   })(jQuery);
 }
 
@@ -784,7 +760,7 @@ function init_map() {
  --------------------------------------------- */
 
 function init_wow() {
-  (function($) {
+  (function ($) {
 
     var wow = new WOW({
       boxClass: 'wow',
@@ -807,9 +783,9 @@ function init_wow() {
  --------------------------------------------- */
 
 function init_masonry() {
-  (function($) {
+  (function ($) {
 
-    $(".masonry").imagesLoaded(function() {
+    $(".masonry").imagesLoaded(function () {
       $(".masonry").masonry();
     });
 

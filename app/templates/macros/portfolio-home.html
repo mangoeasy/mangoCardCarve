@@ -7,8 +7,8 @@
 
     <!-- Works Filter -->
     <div class="works-filter font-alt  align-center" data-bind="foreach:SubCardTypeModels">
-      
-      <a href="#" class="filter" data-bind="text:Name,attr:{'data-filter':'.'+Code()},css:{active:$index()==0}"></a>
+      <a href="#" class="filter active" data-bind="text:'全部',attr:{'data-filter':'*'},visible:$index()==0"></a>
+      <a href="#" class="filter" data-bind="text:Name,attr:{'data-filter':'.'+Id()}"></a>
     </div>
     <!-- End Works Filter -->
 
@@ -18,7 +18,7 @@
       <!-- End Work Item -->
 
       <!-- Work Item (Lightbox) -->
-      <li class="work-item mix" data-bind="css:Code()">
+      <li class="work-item mix" data-bind="css:Id()">
         <a href="images/portfolio/full-project-1.jpg" class="work-lightbox-link mfp-image">
           <div class="work-img">
             <img src="images/portfolio/projects-1.jpg" alt="Work"/>
