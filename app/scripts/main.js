@@ -42,7 +42,7 @@ console.log('main')
     init_counters();
     init_team();
     initPageSliders();
-    initWorkFilter();
+    //initWorkFilter();
     init_map();
     init_wow();
     init_masonry();
@@ -667,11 +667,12 @@ function initPageSliders() {
  --------------------------------------------- */
 
 // Projects filtering
-var fselector = 0;
-var work_grid = $("#work-grid");
+
 
 function initWorkFilter() {
   (function($) {
+    var fselector = 0;
+    var work_grid = $("#work-grid");
 
     var isotope_mode;
     if (work_grid.hasClass("masonry")) {
