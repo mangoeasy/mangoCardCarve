@@ -670,39 +670,42 @@ function initPageSliders() {
 
 
 function initWorkFilter() {
-  (function($) {
-    var fselector = 0;
-    var work_grid = $("#work-grid");
 
-    var isotope_mode;
-    if (work_grid.hasClass("masonry")) {
-      isotope_mode = "masonry";
-    } else {
-      isotope_mode = "fitRows"
-    }
+    $('.section-portfolio').each(function(i){
+      var fselector = 0;
+      var work_grid = $(this).find(".works-grid");
+      var work_filter = $(this).find(".filter");
 
-    work_grid.imagesLoaded(function() {
-      work_grid.isotope({
-        itemSelector: '.mix',
-        layoutMode: isotope_mode,
-        filter: fselector
+      var isotope_mode;
+      if (work_grid.hasClass("masonry")) {
+        isotope_mode = "masonry";
+      } else {
+        isotope_mode = "fitRows"
+      }
+
+      work_grid.imagesLoaded(function() {
+        work_grid.isotope({
+          itemSelector: '.mix',
+          layoutMode: isotope_mode,
+          filter: fselector
+        });
       });
-    });
 
-    $(".page").delegate('.filter','click',function() {
-      $(".filter").removeClass("active");
-      $(this).addClass("active");
-      fselector = $(this).attr('data-filter');
+      work_filter.on('click',function() {
+        work_filter.removeClass("active");
+        $(this).addClass("active");
+        fselector = $(this).attr('data-filter');
 
-      work_grid.isotope({
-        itemSelector: '.mix',
-        layoutMode: isotope_mode,
-        filter: fselector
+        work_grid.isotope({
+          itemSelector: '.mix',
+          layoutMode: isotope_mode,
+          filter: fselector
+        });
+        return false;
       });
-      return false;
-    });
+    })
 
-  })(jQuery);
+
 }
 
 

@@ -2,11 +2,12 @@
 <!-- Portfolio Section -->
 
 <section class="page-section pt-50 pb-20" data-bind="foreach:viewModel.cardTypes">
-  <div class="container relative">
+  <div class="container relative section-portfolio">
     <h2 class="section-title font-alt mb-70 mb-sm-40" data-bind="text:Name"></h2>
 
     <!-- Works Filter -->
     <div class="works-filter font-alt  align-center" data-bind="foreach:SubCardTypeModels">
+      
       <a href="#" class="filter" data-bind="text:Name,attr:{'data-filter':'.'+Code()},css:{active:$index()==0}"></a>
     </div>
     <!-- End Works Filter -->
