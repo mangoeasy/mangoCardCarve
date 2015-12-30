@@ -14,6 +14,17 @@ var Home = {
     }
   }
 };
+ko.bindingHandlers.qrbind = {
+  init: function(element, valueAccessor, allBindingsAccessor, viewModel) {
+    // This will be called when the binding is first applied to an element
+    // Set up any initial state, event handlers, etc. here
+  },
+  update: function (element, valueAccessor) {
+    var data = ko.unwrap(valueAccessor());
+    var url = window.location.href + "demo.html?id=" + data;
+    $(element).qrcode(url);
+  }
+};
 ko.applyBindings(Home);
 $.get("http://api.card.mangoeasy.com/api/CardType/", function (data) {
   ko.mapping.fromJS(data, {}, Home.viewModel.cardTypes);
@@ -24,6 +35,7 @@ $.get("http://api.card.mangoeasy.com/api/CardType/", function (data) {
       if (wechatuser != null) {
         ko.mapping.fromJS(wechatuser, {}, Home.viewModel.wechatuser);
       }
+
     });
   });
 });

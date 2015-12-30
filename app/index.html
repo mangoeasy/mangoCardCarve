@@ -130,8 +130,8 @@
 
 
 <!-- Portfolio Section -->
-
-<section class="page-section pt-50 pb-20" data-bind="foreach:viewModel.cardTypes">
+<div data-bind="foreach:viewModel.cardTypes">
+<section class="page-section pt-50 pb-20" >
   <div class="container relative section-portfolio">
     <h2 class="section-title font-alt mb-70 mb-sm-40" data-bind="text:Name"></h2>
 
@@ -146,34 +146,29 @@
     <ul class="works-grid work-grid-3 work-grid-gut clearfix font-alt hover-black hide-titles" id="work-grid"
         data-bind="foreach:SubCardTypeModels">
       <!-- End Work Item -->
-
-      <!-- Work Item (Lightbox) -->
-      <li class="work-item mix" data-bind="css:Id()">
-        <a href="images/portfolio/full-project-1.jpg" class="work-lightbox-link mfp-image">
-          <div class="work-img">
-            <img src="images/portfolio/projects-1.jpg" alt="Work"/>
-          </div>
-          <div class="work-intro">
-            <h3 class="work-title">Portrait</h3>
-
-            <div class="work-descr">
-
-              <p>
-                Lightbox
-              </p>
-
-              <div class="mb-10">
-                <a href="#" class="btn btn btn-mod btn-border-w btn-round">
-                  <i class="fa fa-trash"></i>
-                  remove
-                </a>
-              </div>
-
+      <div data-bind="foreach:CardDemoModels">
+        <!-- Work Item (Lightbox) -->
+        <li class="work-item mix" data-bind="css:CardTypeId()">
+          <a href="images/portfolio/full-project-1.jpg" class="work-lightbox-link mfp-image">
+            <div class="work-img">
+              <img data-bind="attr:{'src':ThumbnailUrl,'alt':Name}" />
             </div>
-          </div>
-        </a>
-      </li>
-      <!-- End Work Item -->
+            <div class="work-intro">
+              <h3 class="work-title" data-bind="text:Name"></h3>
+
+              <div class="work-descr">
+                <div class="mb-10">
+                  <a class="btn btn-mod btn-border-w btn-round btn-medium" href="#">选择</a>
+                </div>
+
+                <div data-bind="qrbind:Id" style="background-color: white">
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <!-- End Work Item -->
+      </div>
 
 
     </ul>
@@ -182,7 +177,7 @@
 
   </div>
 </section>
-
+</div>
 <!-- End Portfolio Section -->
 
 
@@ -279,7 +274,9 @@
 <script src="/bower_components/BigVideo/lib/bigvideo.js"></script>
 <script src="/bower_components/knockout/dist/knockout.js"></script>
 <script src="/bower_components/knockout.mapping/build/output/knockout.mapping-latest.debug.js"></script>
-<script src="/bower_components/jquery-qrcode/dist/jquery.qrcode.js"></script>
+<script src="/scripts/jquery.qrcode.min.js"></script>
+<script src="/scripts/qrcode.min.js"></script>
+
 <!-- endbuild -->
 
 <!-- build:js scripts/previousJS.js -->

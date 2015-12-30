@@ -23,7 +23,7 @@
     "jquery.localScroll": "~1.4.0",
     "knockout": "~3.4.0",
     "knockout.mapping": "https://github.com/SteveSanderson/knockout.mapping.git#~2.4.1",
-    "jquery-qrcode": "https://github.com/lrsjng/jquery-qrcode.git#~0.12.0"
+    "qrcode-generator": "https://github.com/kazuhikoarase/qrcode-generator.git"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "chai": "~3.4.2",
-    "mocha": "~2.3.4"
+    "mocha": "~2.3.4",
+    "jquery-qrcode": "https://github.com/jeromeetienne/jquery-qrcode"
   }
 }
