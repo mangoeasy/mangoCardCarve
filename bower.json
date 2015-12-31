@@ -23,7 +23,8 @@
     "jquery.localScroll": "~1.4.0",
     "knockout": "~3.4.0",
     "knockout.mapping": "https://github.com/SteveSanderson/knockout.mapping.git#~2.4.1",
-    "qrcode-generator": "https://github.com/kazuhikoarase/qrcode-generator.git"
+    "qrcode-generator": "https://github.com/kazuhikoarase/qrcode-generator.git",
+    "BigVideo": "BigVideo.js#~1.1.5"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -37,6 +38,11 @@
   "devDependencies": {
     "chai": "~3.4.2",
     "mocha": "~2.3.4",
-    "jquery-qrcode": "https://github.com/jeromeetienne/jquery-qrcode"
+    "jquery-qrcode": "https://github.com/jeromeetienne/jquery-qrcode",
+    "BigVideo": "BigVideo.js#~1.1.5",
+    "video.js": "videojs#~5.4.6"
+  },
+  "resolutions": {
+    "jquery": "~2.1.4"
   }
 }

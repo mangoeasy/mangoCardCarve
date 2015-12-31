@@ -491,7 +491,7 @@
     });
 
     //hero background video
-    initHeroBgVideo();
+    //initHeroBgVideo();
 
 
   });
@@ -499,37 +499,7 @@
 
 function initHeroBgVideo() {
 
-  if ($(".fullscreen-bg").length) {
-    var BVS = [];
-    $(".fullscreen-bg").each(function (i) {
-      var obj = $.parseJSON($(this).attr('data-property'));
-      var BV = new $.BigVideo({
-        // If you want to use a single mp4 source, set as true
-        useFlashForFirefox: true,
-        // If you are doing a playlist, the video won't play the first time
-        // on a touchscreen unless the play event is attached to a user click
-        forceAutoplay: false,
-        controls: false,
-        doLoop: true,
-        container: $(this),
-        shrinkable: false
-      });
-      BV.init();
-      BV.show([{
-        type: "video/mp4",
-        src: obj.mp4
-      }, {
-        type: "video/webm",
-        src: obj.webm
-      }, {
-        type: "video/ogg",
-        src: obj.ogv
-      }]);
-      BVS.push(BV);
-    });
 
-
-  }
 }
 /* ---------------------------------------------
  Sliders

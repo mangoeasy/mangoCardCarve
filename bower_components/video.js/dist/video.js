@@ -1,6 +1,6 @@
 /**
  * @license
- * Video.js 5.4.5 <http://videojs.com/>
+ * Video.js 5.4.6 <http://videojs.com/>
  * Copyright Brightcove, Inc. <https://www.brightcove.com/>
  * Available under Apache License Version 2.0
  * <https://github.com/videojs/video.js/blob/master/LICENSE>
@@ -2526,7 +2526,7 @@ function forEach(list, iterator, context) {
     if (arguments.length < 3) {
         context = this
     }
-
+    
     if (toString.call(list) === '[object Array]')
         forEachArray(list, iterator, context)
     else if (typeof list === 'string')
@@ -13041,7 +13041,7 @@ function _createSetter(attr) {
 }
 function _createGetter(attr) {
   _api[attr] = function () {
-    //return this.el_.vjs_getProperty(attr);
+    return this.el_.vjs_getProperty(attr);
   };
 }
 
@@ -18477,7 +18477,7 @@ var _guid = 1;
 /**
  * Get the next unique ID
  *
- * @return {String}
+ * @return {String} 
  * @function newGUID
  */
 
@@ -18565,7 +18565,7 @@ function _logType(type, args) {
 
   // call appropriate log function
   if (console[type].apply) {
-    //console[type].apply(console, argsArray);
+    console[type].apply(console, argsArray);
   } else {
     // ie8 doesn't allow error.apply, but it will just join() the array anyway
     console[type](argsArray.join(' '));
@@ -19101,7 +19101,7 @@ setup.autoSetupTimeout(1, videojs);
  *
  * @type {String}
  */
-videojs.VERSION = '5.4.5';
+videojs.VERSION = '5.4.6';
 
 /**
  * The global options object. These are the settings that take effect
