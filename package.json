@@ -39,5 +39,8 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "canvid": "^1.4.0"
   }
 }

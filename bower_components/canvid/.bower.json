@@ -1,0 +1,14 @@
+{
+  "name": "canvid",
+  "homepage": "https://github.com/gka/canvid",
+  "_release": "643d38b17b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "643d38b17b12a0f3657d7ca7cfc1546d1d01f2c0"
+  },
+  "_source": "https://github.com/gka/canvid.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/gka/canvid.git",
+  "_direct": true
+}

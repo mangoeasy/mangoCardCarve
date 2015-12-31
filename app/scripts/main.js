@@ -491,7 +491,7 @@
     });
 
     //hero background video
-    //initHeroBgVideo();
+    initHeroBgVideo();
 
 
   });
@@ -499,7 +499,20 @@
 
 function initHeroBgVideo() {
 
-
+  //canvid
+  var canvidControl = canvid({
+    selector : '.canvid-bg',
+    videos: {
+        clip1: { src: 'images/myvideo.jpg', frames: 100, cols: 5 }
+    },
+    width: 1920/5,
+    height: 1080/5,
+    loaded: function() {
+        canvidControl.play('clip1');
+        // reverse playback
+        // canvidControl.play('clip1', true);
+    }
+});
 }
 /* ---------------------------------------------
  Sliders

@@ -24,7 +24,8 @@
     "knockout": "~3.4.0",
     "knockout.mapping": "https://github.com/SteveSanderson/knockout.mapping.git#~2.4.1",
     "qrcode-generator": "https://github.com/kazuhikoarase/qrcode-generator.git",
-    "BigVideo": "BigVideo.js#~1.1.5"
+    "BigVideo": "BigVideo.js#~1.1.5",
+    "canvid": "https://github.com/gka/canvid.git"
   },
   "overrides": {
     "bootstrap-sass": {
