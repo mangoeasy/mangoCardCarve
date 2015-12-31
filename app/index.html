@@ -85,7 +85,7 @@
 <!-- Home Section -->
 <section class="home-section bg-dark-alfa-50" data-background="video/Sparks/Snapshots/Sparks.jpg" id="home">
   <!-- Video BG Init -->
-  <div class="fullscreen-bg canvid-bg js-height-full" >
+  <div class="fullscreen-bg canvid-bg js-height-full text-center" >
   </div>
   <!-- End Video BG Init -->
 
@@ -145,32 +145,24 @@
     <!-- Works Grid -->
     <ul class="works-grid work-grid-3 work-grid-gut clearfix font-alt hover-black hide-titles" id="work-grid"
         data-bind="foreach:SubCardTypeModels">
-      <!-- End Work Item -->
-      <div data-bind="foreach:CardDemoModels">
+      <!-- ko foreach:CardDemoModels -->
         <!-- Work Item (Lightbox) -->
-        <li class="work-item mix" data-bind="css:CardTypeId()">
-          <a href="images/portfolio/full-project-1.jpg" class="work-lightbox-link mfp-image">
+        <li class="work-item mix" data-bind="qrbind:Id,css:CardTypeId()">
+          <a class="work-canvas-link mfp-image" >
             <div class="work-img">
               <img data-bind="attr:{'src':ThumbnailUrl,'alt':Name}" />
             </div>
             <div class="work-intro">
               <h3 class="work-title" data-bind="text:Name"></h3>
-
-              <div class="work-descr">
-                <div class="mb-10">
-                  <a class="btn btn-mod btn-border-w btn-round btn-medium" href="#">选择</a>
-                </div>
-
-                <div data-bind="qrbind:Id" style="background-color: white">
-                </div>
+               <div class="work-descr">
+                 <p>
+                   选择打开二维码
+                 </p>
               </div>
             </div>
           </a>
         </li>
-        <!-- End Work Item -->
-      </div>
-
-
+        <!-- /ko -->
     </ul>
     <!-- End Works Grid -->
 

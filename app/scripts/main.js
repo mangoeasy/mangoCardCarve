@@ -328,6 +328,7 @@
     });
     $(".lightbox").magnificPopup();
 
+
   }
 
 
